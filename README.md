@@ -23,3 +23,76 @@
 - **Masofaviy maslahat:** Shifokor bilan audio yoki video qo'ng'iroq orqali maslahatlashish.
 - **Xabarlashish:** Shifokorlar va bemorlar o'rtasida xabar almashish.
 - **Eslatmalar:** Qabul vaqtini, dori ichish vaqtini va boshqa muhim ma'lumotlarni eslatish.
+
+**Project struktura:**
+lib/  
+├── app/  
+│   ├── app.dart  
+│   ├── bloc_observer.dart  
+│   ├── config/  
+│   │   ├── constants.dart  
+│   │   ├── theme.dart  
+│   │   ├── routes.dart  
+│   │   ├── localization.dart  
+├── core/  
+│   ├── data/  
+│   │   ├── datasources/  
+│   │   │   ├── remote/  
+│   │   │   │   ├── api_service.dart  
+│   │   │   ├── local/  
+│   │   │   │   ├── hive_service.dart  
+│   │   ├── models/  
+│   │   │   ├── user.dart  
+│   │   │   ├── doctor.dart  
+│   │   │   ├── hospital.dart  
+│   │   │   ├── appointment.dart  
+│   │   ├── repositories/  
+│   │   │   ├── user_repository_impl.dart  
+│   │   │   ├── doctor_repository_impl.dart  
+│   │   │   ├── hospital_repository_impl.dart  
+│   │   │   ├── appointment_repository_impl.dart  
+│   ├── domain/  
+│   │   ├── entities/  
+│   │   │   ├── user.dart  
+│   │   │   ├── doctor.dart  
+│   │   │   ├── hospital.dart  
+│   │   │   ├── appointment.dart  
+│   │   ├── repositories/  
+│   │   │   ├── user_repository.dart  
+│   │   │   ├── doctor_repository.dart  
+│   │   │   ├── hospital_repository.dart  
+│   │   │   ├── appointment_repository.dart  
+│   │   ├── usecases/  
+│   │   │   ├── get_user.dart  
+│   │   │   ├── get_doctors.dart  
+│   │   │   ├── get_hospitals.dart  
+│   │   │   ├── book_appointment.dart  
+│   ├── utils/  
+│   │   ├── location_service.dart  
+│   │   ├── network_info.dart  
+├── features/  
+│   ├── home/  
+│   │   ├── presentation/  
+│   │   │   ├── home_screen.dart  
+│   │   │   ├── widgets/  
+│   │   │   │   ├── doctor_card.dart  
+│   │   │   │   ├── hospital_card.dart  
+│   │   │   │   ├── appointment_card.dart  
+│   │   ├── logic/  
+│   │   │   ├── home_bloc.dart  
+│   │   │   ├── home_event.dart  
+│   │   │   ├── home_state.dart  
+│   ├── search/  
+│   │   ├── presentation/  
+│   │   │   ├── search_screen.dart  
+│   │   │   ├── widgets/  
+│   │   │   │   ├── search_bar.dart  
+│   │   │   │   ├── search_results.dart  
+│   │   ├── logic/  
+│   │   │   ├── search_bloc.dart  
+│   │   │   ├── search_event.dart  
+│   │   │   ├── search_state.dart  
+│   ├── bookings/  
+│   ├── chat/  
+│   ├── profile/  
+├── main.dart  
