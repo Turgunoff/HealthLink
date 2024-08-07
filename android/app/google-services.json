@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "793715499459",
+    "project_id": "healthlink-5fffe",
+    "storage_bucket": "healthlink-5fffe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793715499459:android:fd3f2ee1e2f0116802dd76",
+        "android_client_info": {
+          "package_name": "uz.healthlink.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiL1le4z4t9Nt7f-XkI6McwoEVeqtjvCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
