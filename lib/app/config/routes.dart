@@ -4,47 +4,31 @@
 // @File name: routes.dart
 //
 
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:health_link/features/widgets/bottom_nav_bar.dart';
 
-import '../../features/home/presentation/home_screen.dart';
-import '../../features/splash/presentation/splash_screen.dart';
 
-final GoRouter router = GoRouter(
-  initialLocation: '/', // Splash screenni boshlang'ich nuqta qilish
-  routes: <RouteBase>[
-    GoRoute(
+import 'package:health_link/features/home/presentation/home_screen.dart';
+import 'package:health_link/features/splash/presentation/splash_screen.dart';
+
+part 'router.gr.dart';
+
+@AutoRouterConfig()
+class AppRouter extends _$AppRouter {
+  @override
+  List<AutoRoute> get routes => [
+    AutoRoute(
+      page: HomeRoute.page,
       path: '/',
-      builder: (BuildContext context, GoRouterState state) =>
-          const SplashScreen(),
-    ),
-    ShellRoute(
-      builder: (BuildContext context, GoRouterState state, Widget child) {
-        return MainLayout(child: child); // MainLayout'ni ishlatish
-      },
-      routes: <RouteBase>[
-        GoRoute(
-          path: '/home',
-          builder: (BuildContext context, GoRouterState state) =>
-              const HomeScreen(),
+      children: [
+        AutoRoute(
+          page: SplashScreen.page,
+          path: 'search',
         ),
-        // ... (boshqa ekranlar uchun route'lar)
+        AutoRoute(
+          page: HomeScreen.page,
+          path: 'home',
+        ),
+
       ],
     ),
-  ],
-);
-
-class MainLayout extends StatelessWidget {
-  final Widget child;
-
-  const MainLayout({Key? key, required this.child}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: child, // Bu yerda child vidjeti ko'rsatiladi
-      bottomNavigationBar: const BottomNavBar(),
-    );
-  }
+  ];
 }

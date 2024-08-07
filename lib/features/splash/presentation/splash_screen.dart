@@ -6,6 +6,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:health_link/features/widgets/bottom_nav_bar.dart';
 
 import '../../home/presentation/home_screen.dart';
 
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 2)); // 2 soniya kutish
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()), // HomeScreen ga o'tish
+      MaterialPageRoute(builder: (context) => const BottomNavBar()), // HomeScreen ga o'tish
     );
   }
   @override
