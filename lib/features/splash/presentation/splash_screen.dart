@@ -4,8 +4,8 @@
 // @File name: splash_screen.dart
 //
 
-
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:health_link/features/widgets/bottom_nav_bar.dart';
 
 import '../../home/presentation/home_screen.dart';
@@ -18,9 +18,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
-
   void initState() {
     super.initState();
     _navigateToHome(); // initState ichida chaqirish
@@ -28,11 +26,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _navigateToHome() async {
     await Future.delayed(const Duration(seconds: 2)); // 2 soniya kutish
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const BottomNavBar()), // HomeScreen ga o'tish
-    );
+    Navigator.pushReplacementNamed(context, '/home'); // MainScreen ga o'tish
   }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

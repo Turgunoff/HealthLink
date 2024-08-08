@@ -23,21 +23,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _router = AppRouter();
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
       ],
-      child: MaterialApp.router(
+      child: MaterialApp(
+        initialRoute: '/', // Boshlang'ich route nomi
+        onGenerateRoute: RouteGenerator.generateRoute, // Route'larni generatsiya qilish uchun
         debugShowCheckedModeBanner: false,
         // Remove this line when releasing your app
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        routerConfig: _router.config(),
       ),
     );
   }
