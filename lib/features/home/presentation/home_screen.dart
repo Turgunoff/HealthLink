@@ -5,7 +5,9 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
+
+import '../../doctor_detail/presentation/doctor_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,9 +21,13 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushReplacementNamed(context, '/profile');
+            pushScreen(
+              context,
+              withNavBar: true,
+              screen: const DoctorDetailScreen(),
+            );
           },
-          child: Text('Home'),
+          child: Text('doctor detail'),
         ),
       ),
     );

@@ -1,16 +1,22 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:health_link/app/app.dart';
 
 import 'app/config/routes.dart';
 import 'features/home/logic/home_bloc.dart';
-import 'features/splash/presentation/splash_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      systemNavigationBarColor: Colors.transparent,
+    ),
   );
   runApp(const MyApp());
 }
@@ -30,10 +36,8 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
       ],
       child: MaterialApp(
-        initialRoute: '/', // Boshlang'ich route nomi
-        onGenerateRoute: RouteGenerator.generateRoute, // Route'larni generatsiya qilish uchun
+        home: const App(),
         debugShowCheckedModeBanner: false,
-        // Remove this line when releasing your app
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
