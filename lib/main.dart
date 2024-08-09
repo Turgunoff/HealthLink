@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:health_link/app/app.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'app/config/routes.dart';
+
 import 'features/home/logic/home_bloc.dart';
 import 'firebase_options.dart';
 
@@ -36,6 +37,16 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
       ],
       child: MaterialApp(
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('ru'), // Russian
+          Locale('en'), // English
+          Locale('uz'), // Uzbek
+        ],
         home: const App(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
