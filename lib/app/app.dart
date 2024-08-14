@@ -51,7 +51,7 @@ class App extends StatelessWidget {
         ),
         // settingsScreen(),
         PersistentTabConfig(
-          screen: const ProfileScreen(),
+          screen:  ProfileScreen(),
           item: ItemConfig(
             icon: const Icon(Iconsax.profile_circle),
             title: "Profile",

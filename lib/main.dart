@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +10,8 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -17,7 +20,14 @@ void main() async {
       systemNavigationBarColor: Colors.transparent,
     ),
   );
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [Locale('en'), Locale('ru'), Locale('uz')],
+      path: 'assets/translations', // <-- json fayllar joylashgan papka
+      fallbackLocale: const Locale('en'),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -35,6 +45,9 @@ class _MyAppState extends State<MyApp> {
         BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
       ],
       child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
         home: const App(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
