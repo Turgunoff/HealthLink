@@ -9,6 +9,7 @@ import 'dart:convert';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:http/http.dart' as http;
 
@@ -23,18 +24,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late Box _themeBox; // Box'ni e'lon qilamiz
-  ThemeMode _themeMode = ThemeMode.light;
-
   @override
   void initState() {
     super.initState();
-    _openBox(); // Box'ni ochish uchun funksiya chaqiramiz
-    _themeMode = _themeBox.get('themeMode', defaultValue: ThemeMode.light);
-  }
-
-  Future<void> _openBox() async {
-    _themeBox = await Hive.openBox('theme'); // Box'ni ochamiz
   }
 
   // Inside your HomeScreen widget (or a suitable place)
@@ -53,24 +45,27 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(context.tr('hello')),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(4.0), // Chiziqning balandligi
+          child: Container(
+            color: Colors.blue, // Chiziqning rangi
+          ),
+        ),
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: Colors.white,
+        title: Text('Home Screen'),
         actions: [
           IconButton(
-            icon: Icon(
-              _themeMode == ThemeMode.light
-                  ? Icons.dark_mode
-                  : Icons.light_mode,
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(Colors.grey.shade200),
             ),
-            onPressed: () {
-              setState(() {
-                _themeMode = _themeMode == ThemeMode.light
-                    ? ThemeMode.dark
-                    : ThemeMode.light;
-                _themeBox.put('themeMode', _themeMode);
-              });
-            },
+            highlightColor: Colors.grey.shade400,
+            tooltip: context.tr('notifications'),
+            onPressed: () {},
+            icon: Icon(Iconsax.notification),
           ),
         ],
       ),

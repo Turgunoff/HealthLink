@@ -13,7 +13,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await Hive.initFlutter(); // Hive'ni ishga tushiramiz
+  // await Hive.initFlutter(); // Hive'ni ishga tushiramiz
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -41,16 +41,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _themeBox = Hive.box('theme'); // Hive box'ni ochamiz
+  // final _themeBox = Hive.box('theme'); // Hive box'ni ochamiz
 
-  @override
-  void initState() {
-    super.initState();
-    // Agar oldin tema saqlanmagan bo'lsa, light tema sifatida o'rnatamiz
-    if (_themeBox.get('themeMode') == null) {
-      _themeBox.put('themeMode', ThemeMode.light);
-    }
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // Agar oldin tema saqlanmagan bo'lsa, light tema sifatida o'rnatamiz
+  //   if (_themeBox.get('themeMode') == null) {
+  //     _themeBox.put('themeMode', ThemeMode.light);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -58,24 +58,17 @@ class _MyAppState extends State<MyApp> {
       providers: [
         BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
       ],
-      child: ValueListenableBuilder<Box>(
-          // Hive box'ni kuzatamiz
-          valueListenable: _themeBox.listenable(),
-          builder: (context, box, _) {
-            final themeMode =
-                box.get('themeMode', defaultValue: ThemeMode.light);
-            return MaterialApp(
-              localizationsDelegates: context.localizationDelegates,
-              supportedLocales: context.supportedLocales,
+      child: MaterialApp(
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        locale: context.locale,
+        home: const App(),
+        debugShowCheckedModeBanner: false,
 
-              locale: context.locale,
-              home: const App(),
-              debugShowCheckedModeBanner: false,
-              themeMode: themeMode, // ThemeMode'ni o'rnatamiz
-              theme: AppTheme.lightTheme,
-              darkTheme: AppTheme.darkTheme,
-            );
-          }),
+        // themeMode: AppTheme.darkTheme, // ThemeMode'ni o'rnatamiz
+        // theme: AppTheme.lightTheme,
+        // darkTheme: AppTheme.darkTheme,
+      ),
     );
   }
 }
