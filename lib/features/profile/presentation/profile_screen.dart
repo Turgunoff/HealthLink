@@ -88,7 +88,7 @@ class ProfileScreen extends StatelessWidget {
           backgroundColor: Colors.white,
           padding: EdgeInsets.symmetric(horizontal: 16),
           elevation:0,
-          shape: LinearBorder()
+          shape: LinearBorder(),
         ),
         onPressed: () {},
         child: Row(

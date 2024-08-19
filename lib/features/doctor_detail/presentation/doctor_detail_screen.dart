@@ -5,25 +5,28 @@
 //
 
 import 'package:flutter/material.dart';
+import 'package:health_link/core/domain/entities/doctor.dart';
 
 class DoctorDetailScreen extends StatelessWidget {
-  const DoctorDetailScreen({super.key});
+  final Doctor doctor;
+  const DoctorDetailScreen({super.key, required this.doctor});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Doctor Detail'),
+        title: Text('${doctor.firstName} ${doctor.lastName}'),
       ),
       body: Center(
-        child: Text('Doctor Detail Screen'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Navigate to previous screen
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.arrow_back),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Specialization: ${doctor.specialization}'),
+            // Text('Experience: ${doctor.experience} years'),
+            Text('Rating: ${doctor.rating}'),
+            // Add more details as needed
+          ],
+        ),
       ),
     );
   }
