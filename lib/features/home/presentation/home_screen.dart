@@ -56,16 +56,51 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.white,
-        title: Text('Home Screen'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              context.tr('location'),
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey.shade600,
+              ),
+            ),
+            const SizedBox(height: 4),
+            const Row(
+              children: [
+                const Icon(
+                  Iconsax.location,
+                  size: 18,
+                  color: Colors.blue,
+                ),
+                SizedBox(width: 4),
+                Text(
+                  'Tashkent, Uzbekistan',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(width: 4),
+                Icon(
+                  Iconsax.arrow_square_down,
+                  size: 18,
+                  color: Colors.blue,
+                ),
+              ],
+            ),
+          ],
+        ),
         actions: [
           IconButton(
             style: ButtonStyle(
-              backgroundColor: WidgetStateProperty.all(Colors.grey.shade200),
+              backgroundColor: WidgetStateProperty.all(const Color(0xFFF0EEEE)),
             ),
             highlightColor: Colors.grey.shade400,
             tooltip: context.tr('notifications'),
             onPressed: () {},
-            icon: Icon(Iconsax.notification),
+            icon: const Icon(Iconsax.notification_bing),
           ),
         ],
       ),
@@ -78,8 +113,6 @@ class _HomeScreenState extends State<HomeScreen> {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {
             List<Doctor> doctors = snapshot.data!;
-
-            // Doktorlarni ismi bo'yicha saralash
             doctors.sort((a, b) {
               if (a.rating == null && b.rating == null) return 0;
               if (a.rating == null) return 1;
