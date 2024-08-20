@@ -2,5 +2,7 @@
   "hello": "Привет",
   "welcome": "фыафы",
   "notifications": "Уведомления",
-  "location": "Местоположение"
+  "location": "Местоположение",
+  "see_all": "Смотреть все",
+  "doctor_speciality": "Специализация врача"
 }

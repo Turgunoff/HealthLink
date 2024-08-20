@@ -2,5 +2,7 @@
   "hello": "Salom",
   "welcome": "Hush kelibsiz",
   "notifications": "Xabarlar",
-  "location": "Manzil"
+  "location": "Manzil",
+  "see_all": "Barchasi",
+  "doctor_speciality": "Doktor Turlari"
 }

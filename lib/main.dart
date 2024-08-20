@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:health_link/app/app.dart';
 import 'package:health_link/app/config/theme.dart';
+import 'package:health_link/app/config/theme/dark_theme.dart';
+import 'package:health_link/app/config/theme/light_theme.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import 'features/home/logic/home_bloc.dart';
@@ -62,6 +64,8 @@ class _MyAppState extends State<MyApp> {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
+        theme: lightTheme,
+        darkTheme: darkTheme,
         home: const App(),
         debugShowCheckedModeBanner: false,
 

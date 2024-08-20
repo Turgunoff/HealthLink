@@ -2,5 +2,7 @@
   "hello": "Hello",
   "welcome": "Welcome to HealthLink",
   "notifications": "Notifications",
-  "location": "Location"
+  "location": "Location",
+  "see_all": "See All",
+  "doctor_speciality": "Doctor Speciality"
 }
