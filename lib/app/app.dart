@@ -51,7 +51,7 @@ class App extends StatelessWidget {
         ),
         // settingsScreen(),
         PersistentTabConfig(
-          screen:  ProfileScreen(),
+          screen: ProfileScreen(),
           item: ItemConfig(
             icon: const Icon(Iconsax.profile_circle),
             title: "Profile",
@@ -63,10 +63,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) => PersistentTabView(
         tabs: _tabs(),
         navBarBuilder: (navBarConfig) => Style4BottomNavBar(
-
-          navBarDecoration:  NavBarDecoration(
-            border: Border(top: BorderSide(width: 1,color: Colors.grey.shade200)),
-            color: Colors.white,
+          navBarDecoration: NavBarDecoration(
+            // border:
+            //     Border(top: BorderSide(width: 1, color: Colors.grey.shade200)),
+            color: Theme.of(context).bottomNavigationBarTheme.backgroundColor!,
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
           ),
           itemAnimationProperties: const ItemAnimation(

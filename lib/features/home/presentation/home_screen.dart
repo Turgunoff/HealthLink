@@ -60,11 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     context.tr('location'),
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey.shade600,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                          letterSpacing: 0,
+                        ),
                   ),
                   const SizedBox(height: 4),
                   Row(
@@ -77,7 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(width: 4),
                       Text(
                         'Tashkent, Uzbekistan',
-                        style: Theme.of(context).textTheme.displaySmall,
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                              letterSpacing: 0,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
                       const SizedBox(width: 4),
                       Icon(
@@ -137,20 +138,27 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: const EdgeInsets.only(right: 16),
                             child: Text(
                               context.tr('doctor_speciality'),
-                              style: const TextStyle(
-                                fontSize: 18,
-                                color: Colors.black,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontSize: 18,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                             ),
                           ),
                           Container(
                             padding: const EdgeInsets.only(left: 16),
                             child: Text(
                               context.tr('see_all'),
-                              style: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.blue,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    letterSpacing: 0,
+                                    color: Theme.of(context).primaryColor,
+                                  ),
                             ),
                           ),
                         ],
@@ -186,21 +194,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                const Text(
+                                Text(
                                   'Dentist',
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: Theme.of(context).textTheme.bodyMedium,
                                 ),
                               ],
                             ),
                           );
                         },
                       ),
+                    ),
+                    Container(
+                      height: 5555,
+                      color: Colors.red,
+                      width: 130,
                     ),
                   ],
                 ),

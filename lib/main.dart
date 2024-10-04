@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:health_link/app/app.dart';
 import 'package:health_link/app/config/theme/dark_theme.dart';
 import 'package:health_link/app/config/theme/light_theme.dart';
+import 'package:health_link/features/splash/presentation/splash_screen.dart';
 
 import 'features/home/logic/home_bloc.dart';
 
@@ -13,16 +16,51 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   // await Hive.initFlutter(); // Hive'ni ishga tushiramiz
 
+  // Tizim temasini aniqlash
+  var brightness = PlatformDispatcher.instance.platformBrightness;
+  SystemUiOverlayStyle systemUiOverlayStyle;
+
+  if (brightness == Brightness.dark) {
+    // Dark theme uchun
+    systemUiOverlayStyle = SystemUiOverlayStyle.light.copyWith(
+      systemNavigationBarColor: Colors.black,
+      statusBarColor: Colors.black,
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.light,
+    );
+  } else {
+    // Light theme uchun
+    systemUiOverlayStyle = SystemUiOverlayStyle.dark.copyWith(
+      systemNavigationBarColor: Colors.white,
+      statusBarColor: Colors.white,
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.dark,
+    );
+  }
+  SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+
   SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.transparent,
+    SystemUiOverlayStyle.dark.copyWith(
+      systemNavigationBarColor: Colors.black, // navigation bar color
+      statusBarColor: Colors.black, // status bar color
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
     ),
   );
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle.light.copyWith(
+      systemNavigationBarColor: Colors.black, // navigation bar color
+      statusBarColor: Colors.transparent, // status bar color
+      statusBarBrightness: Brightness.light,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
+
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('ru'), Locale('uz')],
       path: 'assets/translations', // <-- json fayllar joylashgan papka
-      fallbackLocale: const Locale('en'),
+      fallbackLocale: const Locale('ru'),
       child: const MyApp(),
     ),
   );
@@ -59,7 +97,7 @@ class _MyAppState extends State<MyApp> {
         locale: context.locale,
         theme: lightTheme,
         darkTheme: darkTheme,
-        home: const App(),
+        home: const SplashScreen(),
         debugShowCheckedModeBanner: false,
 
         // themeMode: AppTheme.darkTheme, // ThemeMode'ni o'rnatamiz

@@ -5,6 +5,7 @@
 //
 
 import 'package:flutter/material.dart';
+import 'package:health_link/app/app.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +23,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _navigateToHome() async {
     await Future.delayed(const Duration(seconds: 2)); // 2 soniya kutish
-    Navigator.pushReplacementNamed(context, '/home'); // MainScreen ga o'tish
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const App())); // MainScreen ga o'tish
   }
 
   @override
