@@ -4,7 +4,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:health_link/app/app.dart';
 import 'package:health_link/app/config/theme/dark_theme.dart';
 import 'package:health_link/app/config/theme/light_theme.dart';
 import 'package:health_link/features/splash/presentation/splash_screen.dart';

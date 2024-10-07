@@ -4,19 +4,13 @@
 // @File name: home_screen.dart
 //
 
-import 'dart:convert';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:health_link/features/search/presentation/search_screen.dart';
 import 'package:health_link/features/widgets/custom_text_form_fild.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
-import 'package:http/http.dart' as http;
-
-import '../../../core/domain/entities/doctor.dart';
-import '../../doctor_detail/presentation/doctor_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

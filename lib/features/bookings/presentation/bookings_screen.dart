@@ -13,16 +13,16 @@ class BookingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bookings'),
+        title: const Text('Bookings'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('This is the Bookings Screen'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           //Navigator.push(context, MaterialPageRoute(builder: (context) => BookingFormScreen()));
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
