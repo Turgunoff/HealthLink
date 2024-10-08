@@ -4,8 +4,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:health_link/app/config/theme/dark_theme.dart';
 import 'package:health_link/app/config/theme/light_theme.dart';
+import 'package:health_link/features/location/logic/bloc/location_bloc.dart';
 import 'package:health_link/features/splash/presentation/splash_screen.dart';
 
 import 'features/home/logic/home_bloc.dart';
@@ -89,6 +91,7 @@ class _MyAppState extends State<MyApp> {
     return MultiBlocProvider(
       providers: [
         BlocProvider<HomeBloc>(create: (context) => HomeBloc()),
+        BlocProvider<LocationBloc>(create: (context) => LocationBloc()),
       ],
       child: MaterialApp(
         localizationsDelegates: context.localizationDelegates,
