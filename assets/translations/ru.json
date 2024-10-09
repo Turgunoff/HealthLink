@@ -4,5 +4,6 @@
   "notifications": "Уведомления",
   "location": "Местоположение",
   "see_all": "Смотреть все",
-  "doctor_speciality": "Специализация врача"
+  "doctor_speciality": "Специализация врача",
+  "nearby_hospitals": "Ближайшие больницы"
 }

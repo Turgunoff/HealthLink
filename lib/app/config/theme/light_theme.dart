@@ -22,8 +22,8 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   colorScheme: const ColorScheme.light(
-    primary: Color(0xFF0864FC), // Asosiy rang: 0864fc
-    secondary: Color(0xFFE0ECFC), // Qo'shimcha rang: e0ecfc
+    primary: Color(0xFF0864FC),
+    secondary: Color(0xFFDBEAFE),
     onPrimary: Colors.white, // Asosiy rang ustidagi matn: oq
     onSecondary: Colors.black, // Qo'shimcha rang ustidagi matn: qora
     onSurface: Colors.black, // Asosiy matn rangi: qora
