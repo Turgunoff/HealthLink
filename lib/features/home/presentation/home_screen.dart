@@ -8,7 +8,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:health_link/features/search/presentation/search_screen.dart';
 import 'package:health_link/features/widgets/custom_text_form_fild.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:icons_plus/icons_plus.dart';
+// import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     children: [
                       Icon(
-                        Iconsax.location,
+                        Iconsax.location_outline,
                         size: 18,
                         color: Theme.of(context).colorScheme.primary,
                       ),
@@ -62,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(width: 4),
                       Icon(
-                        Iconsax.arrow_square_down,
+                        Iconsax.arrow_down_1_outline,
                         size: 18,
                         color: Theme.of(context).colorScheme.primary,
                       ),
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   tooltip: context.tr('notifications'),
                   onPressed: () {},
                   icon: Icon(
-                    Iconsax.notification5,
+                    Iconsax.notification_outline,
                     color: Theme.of(context).primaryColor,
                   ),
                 ),
@@ -118,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Icon(
-                                  Iconsax.search_normal,
+                                  Iconsax.search_normal_outline,
                                   size: 24,
                                   color: Theme.of(context).primaryColor,
                                 ),
@@ -228,7 +229,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Icon(
-                                  Iconsax.document5,
+                                  Iconsax.like_1_outline,
                                   size: 40,
                                   color: Theme.of(context).colorScheme.primary,
                                 ),
@@ -256,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Icon(
-                                  Iconsax.document5,
+                                  Iconsax.document_1_bulk,
                                   size: 40,
                                   color: Theme.of(context).colorScheme.primary,
                                 ),
@@ -284,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Icon(
-                                  Iconsax.document5,
+                                  Iconsax.document_1_outline,
                                   size: 40,
                                   color: Theme.of(context).colorScheme.primary,
                                 ),
@@ -312,7 +313,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Icon(
-                                  Iconsax.document5,
+                                  Iconsax.document_1_outline,
                                   size: 40,
                                   color: Theme.of(context).colorScheme.primary,
                                 ),
@@ -363,6 +364,57 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
+                    //vertical listview.builder
+                    /// AntDesign's Icon
+                    const Icon(AntDesign.gitlab_fill),
+
+                    /// Bootstrap's Icon
+                    const Icon(Bootstrap.alarm),
+
+                    /// BoxIcons' Icon
+                    const Icon(BoxIcons.bxs_yin_yang),
+
+                    /// Brand's Logo
+                    Brand(Brands.aliexpress),
+
+                    /// Clarity's Icon
+                    const Icon(Clarity.map_outline_badged),
+
+                    /// EvaIcons' Icon
+                    const Icon(EvaIcons.clipboard),
+
+                    /// Flag's Logo
+                    Flag(Flags.kazakhstan),
+
+                    /// FontAwesome's Icons
+                    const Icon(FontAwesome.angular_brand),
+
+                    /// HeroIcons' Icon
+                    const Icon(HeroIcons.printer),
+
+                    /// Iconsax's Icon
+                    const Icon(Iconsax.cake_outline),
+
+                    /// IonIcons' Icon
+                    const Icon(IonIcons.bug),
+
+                    /// LineAwesome's Icon
+                    const Icon(LineAwesome.amazon),
+
+                    /// MingCute's Icon
+                    const Icon(MingCute.knife_line),
+
+                    /// OctIcons'Icon
+                    const Icon(OctIcons.code_of_conduct),
+
+                    /// PixelArtIcons' Icon
+                    const Icon(PixelArtIcons.gif),
+
+                    /// TeenyIcons' Icon
+                    const Icon(TeenyIcons.apple),
+
+                    /// ZondIcons' Icon
+                    const Icon(ZondIcons.shield),
                     Container(
                       height: 5555,
                       color: Colors.red,
