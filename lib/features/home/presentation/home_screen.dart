@@ -6,11 +6,8 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:health_link/features/search/presentation/search_screen.dart';
-import 'package:health_link/features/widgets/custom_text_form_fild.dart';
 import 'package:icons_plus/icons_plus.dart';
 // import 'package:iconsax/iconsax.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

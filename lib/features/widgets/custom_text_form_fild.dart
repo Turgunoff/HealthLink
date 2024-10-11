@@ -80,7 +80,7 @@ class CustomTextFormFild extends StatelessWidget {
         ),
         filled: filled,
         enabled: enabled,
-        contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 0),
+        contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
       ),
     );
   }

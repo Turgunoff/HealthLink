@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLoggedIn = true;
+    const bool isLoggedIn = true;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -86,17 +86,17 @@ class ProfileScreen extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          elevation:0,
-          shape: LinearBorder(),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          elevation: 0,
+          shape: const LinearBorder(),
         ),
         onPressed: () {},
         child: Row(
           children: [
             Icon(icon, size: 24, color: Colors.blue),
-            Text(title, style: TextStyle(fontSize: 16)),
-            Spacer(),
-            Icon(Iconsax.arrow_right_3, size: 24, color: Colors.blue),
+            Text(title, style: const TextStyle(fontSize: 16)),
+            const Spacer(),
+            const Icon(Iconsax.arrow_right_3, size: 24, color: Colors.blue),
           ],
         ),
         // contentPadding: EdgeInsets.symmetric(horizontal: 16),

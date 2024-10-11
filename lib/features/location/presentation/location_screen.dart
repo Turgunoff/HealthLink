@@ -1,17 +1,11 @@
-import 'dart:convert';
-
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:geocoding/geocoding.dart';
-import 'package:geolocator/geolocator.dart'; // Geolocator paketini qo'shing
+// Geolocator paketini qo'shing
 import 'package:health_link/app/app.dart';
 import 'package:health_link/features/location/logic/bloc/location_bloc.dart';
-import 'package:permission_handler/permission_handler.dart'; // permission_handler paketini qo'shing
+// permission_handler paketini qo'shing
 import 'package:iconsax/iconsax.dart';
-import 'dart:io' show Platform;
-import 'package:http/http.dart' as http;
 
 class LocationScreen extends StatefulWidget {
   const LocationScreen({super.key});
@@ -90,7 +84,8 @@ class _LocationScreenState extends State<LocationScreen> {
                         // BlocBuilder ichida
                         builder: (context, state) {
                           return state is LocationLoading
-                              ? CupertinoActivityIndicator(color: Colors.white)
+                              ? const CupertinoActivityIndicator(
+                                  color: Colors.white)
                               : Text(
                                   'Allow Location Access',
                                   style: Theme.of(context)
