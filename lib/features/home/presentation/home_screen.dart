@@ -361,7 +361,353 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    //vertical listview.builder
+                    //horizontal listview.builder
+
+                    SizedBox(
+                      height: 300,
+                      child: ListView.builder(
+                          itemCount: 10,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return Card(
+                              clipBehavior: Clip
+                                  .antiAlias, // Rasmni card chetlariga moslash
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment
+                                    .start, // Elementlarni chapga tekislash
+                                children: [
+                                  Stack(
+                                    children: [
+                                      Image.network(
+                                        'https://remontka.pro/images/reset-password-windows-10-1803.png', // Rasm URL manzili
+                                        height: 150,
+                                        width: MediaQuery.of(context)
+                                                .size
+                                                .width *
+                                            0.6, // Rasmni card kengligiga moslash
+                                        fit: BoxFit
+                                            .cover, // Rasmni cardga to'liq moslash
+                                      ),
+                                      const Positioned(
+                                        top: 10,
+                                        right: 10,
+                                        child: CircleAvatar(
+                                          backgroundColor: Colors.white,
+                                          radius: 15,
+                                          child: Icon(
+                                            Icons.favorite,
+                                            color: Colors.red,
+                                            size: 20,
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        bottom: 10,
+                                        right: 10,
+                                        child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 8, vertical: 4),
+                                          decoration: BoxDecoration(
+                                            color: Colors.amber,
+                                            borderRadius:
+                                                BorderRadius.circular(16),
+                                          ),
+                                          child: const Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Icon(
+                                                Icons.star,
+                                                color: Colors.white,
+                                                size: 16,
+                                              ),
+                                              SizedBox(width: 4),
+                                              Text(
+                                                '4.8',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const Padding(
+                                    padding: EdgeInsets.all(16),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'ElevateDental',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        SizedBox(height: 8),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.access_time,
+                                              color: Colors.blue,
+                                              size: 16,
+                                            ),
+                                            SizedBox(width: 4),
+                                            Text('15 min • 1.5km'),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Text(
+                              context.tr('top_specialist'),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontSize: 18,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(left: 16),
+                            child: Text(
+                              context.tr('see_all'),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    letterSpacing: 0,
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: 10,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            clipBehavior: Clip.antiAlias,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.network(
+                                          width: 80,
+                                          height: 100,
+                                          fit: BoxFit.cover,
+                                          'https://remontka.pro/images/reset-password-windows-10-1803.png',
+                                        ),
+                                      ),
+                                      const SizedBox(width: 16),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
+                                                    horizontal: 8,
+                                                    vertical: 4,
+                                                  ),
+                                                  decoration: BoxDecoration(
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .secondary,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16),
+                                                  ),
+                                                  child: Row(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      Icon(
+                                                        Iconsax
+                                                            .tick_square_outline,
+                                                        size: 14,
+                                                        color: Theme.of(context)
+                                                            .colorScheme
+                                                            .primary,
+                                                      ),
+                                                      const SizedBox(width: 4),
+                                                      Text(
+                                                        'Proffessional Doctor',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .bodySmall!
+                                                            .copyWith(
+                                                              color: Theme.of(
+                                                                      context)
+                                                                  .colorScheme
+                                                                  .primary,
+                                                              letterSpacing: 0,
+                                                            ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                const Spacer(),
+                                                Icon(
+                                                  Iconsax.heart_bold,
+                                                  size: 24,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .primary,
+                                                ),
+                                              ],
+                                            ),
+                                            const SizedBox(height: 4),
+                                            Text(
+                                              'Dr. Jane Cooper',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyMedium!
+                                                  .copyWith(
+                                                      letterSpacing: 0,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                            ),
+                                            Text(
+                                              'Dentist',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyMedium!
+                                                  .copyWith(
+                                                      letterSpacing: 0,
+                                                      color: Colors.grey),
+                                            ),
+                                            const SizedBox(height: 8),
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow[700],
+                                                  size: 16,
+                                                ),
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow[700],
+                                                  size: 16,
+                                                ),
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow[700],
+                                                  size: 16,
+                                                ),
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow[700],
+                                                  size: 16,
+                                                ),
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow[700],
+                                                  size: 16,
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  '4.8',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodyMedium!
+                                                      .copyWith(
+                                                        letterSpacing: 0,
+                                                        fontWeight:
+                                                            FontWeight.w400,
+                                                      ),
+                                                ),
+                                                const Spacer(),
+                                                Container(
+                                                  height: 16,
+                                                  width: 1,
+                                                  color: Colors.grey,
+                                                ),
+                                                const Spacer(),
+                                                Text(
+                                                  '49 reviews',
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .bodyMedium!
+                                                      .copyWith(
+                                                        letterSpacing: 0,
+                                                        color: Colors.grey,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 8),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: double.infinity,
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 12.0),
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Text(
+                                      'Make Appointment',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .primary,
+                                            letterSpacing: 0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+
                     /// AntDesign's Icon
                     const Icon(AntDesign.gitlab_fill),
 
