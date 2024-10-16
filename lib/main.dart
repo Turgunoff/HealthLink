@@ -8,7 +8,6 @@ import 'package:health_link/app/app.dart';
 import 'package:health_link/app/config/theme/dark_theme.dart';
 import 'package:health_link/app/config/theme/light_theme.dart';
 import 'package:health_link/features/location/logic/bloc/location_bloc.dart';
-import 'package:health_link/features/splash/presentation/splash_screen.dart';
 
 import 'features/home/logic/home_bloc.dart';
 

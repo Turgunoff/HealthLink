@@ -32,7 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
           slivers: [
             SliverAppBar(
               toolbarHeight: 70,
+              surfaceTintColor: Colors.transparent,
               floating: true,
+              elevation: 4,
+              shadowColor: Colors.grey.shade100,
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -364,7 +367,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     //horizontal listview.builder
 
                     SizedBox(
-                      height: 300,
+                      height: 250,
                       child: ListView.builder(
                           itemCount: 10,
                           shrinkWrap: true,
@@ -380,7 +383,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Stack(
                                     children: [
                                       Image.network(
-                                        'https://remontka.pro/images/reset-password-windows-10-1803.png', // Rasm URL manzili
+                                        'https://avatars.mds.yandex.net/i?id=0ce2b726578b23b5845d8653a45eea27833d7526-8526247-images-thumbs&n=13', // Rasm URL manzili
                                         height: 150,
                                         width: MediaQuery.of(context)
                                                 .size
@@ -389,15 +392,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                         fit: BoxFit
                                             .cover, // Rasmni cardga to'liq moslash
                                       ),
-                                      const Positioned(
+                                      Positioned(
                                         top: 10,
                                         right: 10,
                                         child: CircleAvatar(
-                                          backgroundColor: Colors.white,
+                                          backgroundColor:
+                                              Colors.white.withOpacity(0.5),
                                           radius: 15,
                                           child: Icon(
-                                            Icons.favorite,
-                                            color: Colors.red,
+                                            Iconsax.heart_outline,
+                                            color: Colors.white,
                                             size: 20,
                                           ),
                                         ),
@@ -408,24 +412,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                         child: Container(
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 8, vertical: 4),
-                                          decoration: BoxDecoration(
-                                            color: Colors.amber,
+                                          decoration: const BoxDecoration(
+                                            color: Colors.white,
                                             borderRadius:
-                                                BorderRadius.circular(16),
+                                                const BorderRadius.only(
+                                              topLeft: Radius.circular(12),
+                                              topRight: Radius.circular(12),
+                                              bottomLeft: Radius.circular(12),
+                                              bottomRight: Radius.circular(0),
+                                            ),
                                           ),
                                           child: const Row(
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Icon(
                                                 Icons.star,
-                                                color: Colors.white,
+                                                color: Colors.amber,
                                                 size: 16,
                                               ),
-                                              SizedBox(width: 4),
                                               Text(
                                                 '4.8',
                                                 style: TextStyle(
-                                                  color: Colors.white,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
