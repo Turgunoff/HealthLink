@@ -5,12 +5,12 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 
 import '../features/bookings/presentation/bookings_screen.dart';
 import '../features/chat/presentation/chat_screen.dart';
-import '../features/explore/presentation/explore_screen.dart';
+import '../features/category/presentation/category_screen.dart';
 import '../features/home/presentation/home_screen.dart';
 import '../features/profile/presentation/profile_screen.dart';
 
@@ -21,23 +21,23 @@ class App extends StatelessWidget {
         PersistentTabConfig(
           screen: const HomeScreen(),
           item: ItemConfig(
-            icon: const Icon(Iconsax.home),
+            icon: const Icon(Iconsax.home_outline),
             title: "Home",
           ),
         ),
         //exploreScreen(),
         PersistentTabConfig(
-          screen: const ExploreScreen(),
+          screen: const CategoryScreen(),
           item: ItemConfig(
-            icon: const Icon(Iconsax.location),
-            title: "Explore",
+            icon: const Icon(Iconsax.category_outline),
+            title: "Category",
           ),
         ),
         //bookingScreen(),
         PersistentTabConfig(
           screen: const BookingsScreen(),
           item: ItemConfig(
-            icon: const Icon(Iconsax.calendar),
+            icon: const Icon(Iconsax.calendar_outline),
             title: "Booking",
           ),
         ),
@@ -45,7 +45,7 @@ class App extends StatelessWidget {
         PersistentTabConfig(
           screen: const ChatScreen(),
           item: ItemConfig(
-            icon: const Icon(Iconsax.message),
+            icon: const Icon(Iconsax.message_outline),
             title: "Chat",
           ),
         ),
@@ -53,7 +53,7 @@ class App extends StatelessWidget {
         PersistentTabConfig(
           screen: const ProfileScreen(),
           item: ItemConfig(
-            icon: const Icon(Iconsax.profile_circle),
+            icon: const Icon(Iconsax.profile_circle_outline),
             title: "Profile",
           ),
         ),

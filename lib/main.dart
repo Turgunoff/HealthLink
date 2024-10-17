@@ -8,6 +8,7 @@ import 'package:health_link/app/app.dart';
 import 'package:health_link/app/config/theme/dark_theme.dart';
 import 'package:health_link/app/config/theme/light_theme.dart';
 import 'package:health_link/features/location/logic/bloc/location_bloc.dart';
+import 'package:health_link/features/splash/presentation/splash_screen.dart';
 
 import 'features/home/logic/home_bloc.dart';
 
@@ -98,8 +99,8 @@ class _MyAppState extends State<MyApp> {
         locale: context.locale,
         theme: lightTheme,
         darkTheme: darkTheme,
-        // home: const SplashScreen(),
-        home: const App(),
+        home: const SplashScreen(),
+        // home: const App(),
         debugShowCheckedModeBanner: false,
 
         // themeMode: AppTheme.darkTheme, // ThemeMode'ni o'rnatamiz

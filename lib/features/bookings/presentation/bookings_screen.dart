@@ -12,17 +12,25 @@ class BookingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bookings'),
-      ),
-      body: const Center(
-        child: Text('This is the Bookings Screen'),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //Navigator.push(context, MaterialPageRoute(builder: (context) => BookingFormScreen()));
-        },
-        child: const Icon(Icons.add),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            pinned: true,
+            floating: false,
+            centerTitle: true,
+            surfaceTintColor: Colors.transparent,
+            elevation: 4,
+            shadowColor: Colors.grey.shade100,
+            // backgroundColor: Colors.white,
+            title: Text(
+              "My Bookings",
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
+          )
+        ],
       ),
     );
   }

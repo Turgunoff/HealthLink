@@ -5,7 +5,6 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -43,27 +42,48 @@ class ChatScreen extends StatelessWidget {
                 return ListTile(
                   contentPadding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                  title: Column(
+                  title: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        'Message $index asf as fas f as fas f asf asf as fa f a fa fas ',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 0,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              'Message $index asf as fas f as fas f asf asf as fa f a fa fas ',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    letterSpacing: 0,
+                                  ),
                             ),
-                      ),
-                      Text(
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        'Message $index  sdfsd  sdf ds fsd fsd f s fs fsd fsd fsd fsd',
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              letterSpacing: 0,
-                              color: Colors.grey.shade600,
+                            Text(
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              'Message $index sdfsd sdf ds fsd fsd f s fs fsd fsd fsd fsd',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                    letterSpacing: 0,
+                                    color: Colors.grey.shade600,
+                                  ),
                             ),
+                          ],
+                        ),
                       ),
+                      const SizedBox(
+                          width: 8), // title va trailing orasidagi bo'sh joy
+                      Text('12:00',
+                          style:
+                              Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                    letterSpacing: 0,
+                                    color: Colors.grey.shade600,
+                                  )),
                     ],
                   ),
                   leading: const CircleAvatar(
@@ -74,19 +94,19 @@ class ChatScreen extends StatelessWidget {
                         'https://www.intervalloconsulting.com/wp-content/uploads/2017/02/pic7-1.jpg',
                         scale: 1.0),
                   ),
-                  trailing: Column(
-                    children: [
-                      Text('12:00',
-                          style:
-                              Theme.of(context).textTheme.bodyMedium!.copyWith(
-                                    letterSpacing: 0,
-                                    color: Colors.grey.shade600,
-                                  )),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                    ],
-                  ),
+                  // trailing: Column(
+                  //   children: [
+                  //     Text('12:00',
+                  //         style:
+                  //             Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  //                   letterSpacing: 0,
+                  //                   color: Colors.grey.shade600,
+                  //                 )),
+                  //     const SizedBox(
+                  //       height: 4,
+                  //     ),
+                  //   ],
+                  // ),
                 );
               },
             ),

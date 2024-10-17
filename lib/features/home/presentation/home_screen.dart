@@ -399,7 +399,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           backgroundColor:
                                               Colors.white.withOpacity(0.5),
                                           radius: 15,
-                                          child: Icon(
+                                          child: const Icon(
                                             Iconsax.heart_outline,
                                             color: Colors.white,
                                             size: 20,
@@ -414,8 +414,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               horizontal: 8, vertical: 4),
                                           decoration: const BoxDecoration(
                                             color: Colors.white,
-                                            borderRadius:
-                                                const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               topLeft: Radius.circular(12),
                                               topRight: Radius.circular(12),
                                               bottomLeft: Radius.circular(12),
